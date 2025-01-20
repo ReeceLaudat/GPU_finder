@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 
 class findGPU:
@@ -37,12 +38,12 @@ class findGPU:
 
         elementLocationFilter = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div[2]/div[3]/div[2]/div[1]/div[1]/div/span")
         elementLocationFilter.click()
-        
-        elementSetLocation = driver.find_element(By.XPATH, "//*[@id=':r37:']")
+        sleep(1)
+        elementSetLocation = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[1]/div/div[5]/div/div/div[1]/div/div[2]/div/div/div/div[3]/div/div[1]/div[2]/div/div/div/div/div/div/label/div[2]/input[1]")
         elementSetLocation.clear() 
         elementSetLocation.send_keys("London, United Kingdom")
         sleep(2)
-        elementSelectLocation = driver.find_element(By.XPATH, "//*[@id=':r3f:']")
+        elementSelectLocation = driver.find_element(By.XPATH, "//*[@id=':r3g:']")
         elementSelectLocation.click()
         elementLocationApply = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[1]/div/div[5]/div/div/div[1]/div/div[2]/div/div/div/div[4]/div/div[2]/div/div/div/div/div/div/div[1]/div/span/span")
         elementLocationApply.click()
