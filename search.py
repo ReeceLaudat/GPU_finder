@@ -43,7 +43,8 @@ class findGPU:
         elementSetLocation.clear() 
         elementSetLocation.send_keys("London, United Kingdom")
         sleep(2)
-        elementSelectLocation = driver.find_element(By.XPATH, "//*[@id=':r3g:']")
+        elementSelectLocation = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[1]/div/div[5]/div/div/div[1]/div/div[3]/div/div/div[1]/div[1]/div/ul/li[1]/div/div[1]/div/div/div/div/div/div/div/div/div[1]/span[1]")
+        
         elementSelectLocation.click()
         elementLocationApply = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[1]/div/div[5]/div/div/div[1]/div/div[2]/div/div/div/div[4]/div/div[2]/div/div/div/div/div/div/div[1]/div/span/span")
         elementLocationApply.click()
