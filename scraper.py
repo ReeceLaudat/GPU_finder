@@ -10,15 +10,16 @@ class GPU_scraper:
         item_name = []
         item_cost = []
         item_links = []
+        
 
         for name, cost, link in zip(soup.find_all("span", role="heading"), soup.find_all("span", class_="s-item__price"), soup.find_all("a", class_="s-item__link")):
             if link.get("href")[-5:] == "BIN=1":
                 item_name.append(name.text.strip())
                 item_cost.append(cost.text.strip())
                 item_links.append(link.get("href"))
-        print(item_links)
-        print(item_cost)
-        print(item_name)
+        
+        listings = [item_links, item_cost, item_name]
+        return listings
 
     def scrape_gpus_fbmp(self, url):
         html_page = open(url).read()
@@ -33,9 +34,9 @@ class GPU_scraper:
                 item_name.append(name.text.strip())
                 item_cost.append(cost.text.strip())
                 item_links.append("https://www.facebook.com/" + link.get("href"))
-        print(item_links)
-        print(item_cost)
-        print(item_name)
-
+        
+        listings = [item_links, item_cost, item_name]
+        print(listings)
+        return listings
 
 

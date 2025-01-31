@@ -15,9 +15,31 @@ class findGPU:
         elementSearchBar.send_keys(gpu)
         elementSearchBar.send_keys(Keys.ENTER)
         sleep(3)
+
+        try:
+            elementItemsPerPageButtonn = driver.find_element(By.XPATH, "//*[@id='gdpr-banner-decline']") 
+            elementItemsPerPageButtonn.click()
+        except:
+            pass
+
+        sleep(2)
+
+        try:
+
+            element240fromdropdown = driver.find_element(By.XPATH, "/html/body/div[5]/div[4]/div[3]/div[1]/div[3]/ul/li[64]/div[2]/div[2]/span[2]/span/ul/li[2]/a")
+            driver.get(element240fromdropdown.get_attribute("href"))
+        
+        except:
+            sleep(3)
+            element240fromdropdown = driver.find_element(By.XPATH, "/html/body/div[5]/div[4]/div[3]/div[1]/div[3]/ul/li[64]/div[2]/div[2]/span[2]/span/ul/li[2]/a")
+            driver.get(element240fromdropdown.get_attribute("href"))
+        
+
         elementBIN = driver.find_element(By.XPATH, "/html/body/div[5]/div[4]/div[1]/div/div[2]/div[2]/div[1]/div/ul/li[3]/a")
         driver.get(elementBIN.get_attribute("href"))
         return driver.current_url
+
+
 
     def facebook_search(self, gpu):
         driver = webdriver.Firefox()
@@ -45,7 +67,8 @@ class findGPU:
 
         elementSearchBar.send_keys(gpu)
         elementSearchBar.send_keys(Keys.ENTER)
-        sleep(3)
+        sleep(2)
+
 
 
         return driver.page_source
