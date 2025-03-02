@@ -4,3 +4,4 @@ A program that helps find GPU's on the market and helps the user find the best p
 - Currently can search for GPUs on site (Either eBay or Facebook marketplace)
 - Can now scrape data of webpages (Need to allow it to scrape more items from the page)
 - Can now save data to a database file
+- Can now create a graph based on the data in the database
