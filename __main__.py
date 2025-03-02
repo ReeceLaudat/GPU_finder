@@ -1,10 +1,11 @@
 import search
 import scraper
 import savedata
+import datagrapher
 import os
  
 
-findgpu = search.findGPU()
+findgpu = search.FindGPU()
 scrapeGPU = scraper.GPU_scraper()
 def searchAndScrape():
     gpu = input ("What gpu would you like to find? ")
@@ -27,9 +28,21 @@ def searchAndScrape():
 
         saveAndQuery(fbmpListings)
     
+    while True:    
+        rungrapher = input ("See plotted graph of attained data?(y/n)")
+
+        if rungrapher == "y":
+            datagrapher.graphItemData()
+            exit()
+
+        elif rungrapher == "n":
+            exit()
+
+
 
         
 def saveAndQuery(data):
+    data[1] = [costs.strip("£") for costs in data[1]]
     savedata.itemData(data[2], data[1], data[0])
     return
 
